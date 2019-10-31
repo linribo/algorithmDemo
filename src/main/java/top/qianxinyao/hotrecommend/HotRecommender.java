@@ -45,11 +45,11 @@ public class HotRecommender implements RecommendAlgorithm
 								+ "' and user_id='" + userId + "' group by user_id");
 				
 				boolean flag=(recommendation!=null);
-				Integer tmpRecNums=0;
+				String tmpRecNums="0";
 				if(recommendation!=null) {
-					tmpRecNums = recommendation.getInt("recnums");
+					tmpRecNums = recommendation.getLong("recnums").toString();
 				}
-				int delta=flag?TOTAL_REC_NUM - Integer.valueOf(tmpRecNums.toString()):TOTAL_REC_NUM;
+				int delta=flag?TOTAL_REC_NUM - Integer.valueOf(tmpRecNums):TOTAL_REC_NUM;
 				Set<Long> toBeRecommended = new HashSet<Long>();
 				if (delta > 0)
 				{

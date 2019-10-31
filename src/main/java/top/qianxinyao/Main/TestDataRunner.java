@@ -29,9 +29,7 @@ public class TestDataRunner
 		databaseReady();
 		
 		List<Long> userList=new ArrayList<Long>();
-		userList.add(1l);
-		userList.add(2l);
-		userList.add(3l);
+		userList.add(7l);
 		
 		//为指定用户执行一次推荐
 		jobSetter.executeInstantJobForCertainUsers(userList);

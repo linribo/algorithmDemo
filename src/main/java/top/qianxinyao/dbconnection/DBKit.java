@@ -14,6 +14,7 @@ import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLBooleanPrefJDBCDataModel;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 
+import top.qianxinyao.algorithms.PropGetKit;
 import top.qianxinyao.model.News;
 import top.qianxinyao.model.Newslogs;
 import top.qianxinyao.model.Newsmodules;
@@ -74,7 +75,7 @@ public class DBKit{
 		try
 		{
 			Properties p = new Properties();
-			p.load(new FileInputStream(System.getProperty("user.dir") + "/res/dbconfig.properties"));
+			p.load(PropGetKit.class.getClassLoader().getResourceAsStream("res/dbconfig.properties"));
 			info = new HashMap<String, String>();
 			info.put("url", p.getProperty("url"));
 			info.put("user", p.getProperty("user"));

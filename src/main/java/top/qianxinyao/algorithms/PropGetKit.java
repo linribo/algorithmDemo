@@ -26,7 +26,8 @@ public class PropGetKit
 	{
 		try
 		{
-			propGetKit.load(new FileInputStream(System.getProperty("user.dir") + "/res/" + configFileName + ".properties"));
+			//propGetKit.load(new FileInputStream(System.getProperty("user.dir") + "/res/" + configFileName + ".properties"));
+			propGetKit.load(PropGetKit.class.getClassLoader().getResourceAsStream("res/"+ configFileName + ".properties"));
 		}
 		catch (FileNotFoundException e)
 		{

@@ -25,17 +25,12 @@ public class Main
 		//在测试数据上运行
 		new TestDataRunner().runTestData();
 		
-		
 		//选择要在推荐系统中运行的推荐算法
-		boolean enableCF=false,enableCB=false,enableHR=true;
+		boolean enableCF=false,enableCB=true,enableHR=false;
 		
 		List<Long> userList=new ArrayList<Long>();
-		userList.add(1l);
-		userList.add(2l);
-		userList.add(3l);
-		
-		
-		
+		userList.add(7l);
+
 		//为指定用户执行一次推荐
 		new JobSetter(enableCF,enableCB,enableHR).executeInstantJobForCertainUsers(userList);
 		//为活跃用户执行定时推荐
